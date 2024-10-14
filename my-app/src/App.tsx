@@ -132,10 +132,6 @@ function App() {
                 style={{
                   color: currTheme.background
                 }}>Create Note</button>
-                <button onClick={toggleTheme}
-                style={{
-                  color: currTheme.background
-                }}>Toggle Theme</button>
             </form>
             <div className="notes-grid">
                 {notes.map((note) => (
@@ -205,7 +201,12 @@ function App() {
                   })}
               </div>
             </div>
-            
+            <div className="toggleThemeButton">
+            <button onClick={toggleTheme}
+                style={{
+                  color: currTheme.background
+                }}>Toggle Theme</button>
+            </div>
 	    </div>
       // </ThemeContext.Provider>
         // <div className='app-container'>
