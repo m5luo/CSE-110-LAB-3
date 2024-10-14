@@ -159,9 +159,10 @@ export const StickyNotes = () => {
                               background: currTheme.background,
                               color: currTheme.foreground
                             }}
+                            data-testid="delete-button"
                         >x</button>
                     </div>
-                    <h2 contentEditable="true" onInput={(e) => {
+                    <h2 className="note-title" contentEditable="true" onInput={(e) => {
                         handleEdit(note, "title", e.currentTarget.innerHTML)
                         console.log("title edited");
                     }}> {note.title} </h2>
