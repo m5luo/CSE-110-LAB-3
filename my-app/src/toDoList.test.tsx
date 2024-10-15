@@ -14,14 +14,14 @@ describe("Create ToDoList", () => {
     });
 });
 
-
-
-test('checkbox item brought increments counter', ()=>{
-    render(<ToDoList />);
-    const checkbox = screen.getAllByTestId('checkboxID');
-    const counter = screen.getByText('Items bought: 0');
-
-    fireEvent.click(checkbox[0]);
-
-    expect(counter).toHaveTextContent('Items bought: 1');
+describe("Check Checkbox", () => {
+    test('checkbox item brought increments counter', ()=>{
+        render(<ToDoList />);
+        const checkbox = screen.getAllByTestId('checkboxID');
+        const counter = screen.getByText('Items bought: 0');
+    
+        fireEvent.click(checkbox[0]);
+    
+        expect(counter).toHaveTextContent('Items bought: 1');
+    });
 });
