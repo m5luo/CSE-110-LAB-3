@@ -6,8 +6,8 @@ import { dummyGroceryList } from "./constants";
 import { useParams } from "react-router-dom";
 
 export function ToDoList() {
- const [numRemainingItems, setNumRemainingItems] = useState(0);
  const { name } = useParams();
+ const [numRemainingItems, setNumRemainingItems] = useState(0);
 
  let [items, setItems] = useState(dummyGroceryList);
 
@@ -33,8 +33,8 @@ export function ToDoList() {
 
  return (
    <div className="App">
+    <h1>{name}'s To Do List</h1>
      <div className="App-body">
-     <h1>{name}'s To Do List</h1>
        Items bought: {numRemainingItems}
        <form action=".">
          {items.map((item) => ListItem(item, handleCheckboxClick))}
@@ -48,6 +48,7 @@ function ListItem(item: GroceryItem, changeHandler: ChangeEventHandler) {
  return (
    <div>
      <input
+       data-testid="checkboxID"
        type="checkbox"
        onChange={changeHandler}
        checked={item.isPurchased}
