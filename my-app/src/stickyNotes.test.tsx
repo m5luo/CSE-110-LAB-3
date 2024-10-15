@@ -56,9 +56,9 @@ describe("Display, Update, Delete Sticky Notes", () => {
             screen.getByText(dummyNotesList[0].content);
 
         userEvent.click(editNoteTitleInput);
-        userEvent.keyboard("abc");
+        userEvent.keyboard(" abc");
         userEvent.click(editNoteContent);
-        userEvent.keyboard("abc");
+        userEvent.keyboard(" abc");
 
         const updatedNoteTitle = screen.getByText(listOfNotes[0].title + " abc");
         const updatedNoteContent = screen.getByText(listOfNotes[0].content + " abc");
