@@ -162,11 +162,11 @@ export const StickyNotes = () => {
                             data-testid="delete-button"
                         >x</button>
                     </div>
-                    <h2 className="note-title" contentEditable="true" onInput={(e) => {
+                    <h2 className="note-title" data-testid="updatedTitle" contentEditable="true" onInput={(e) => {
                         handleEdit(note, "title", e.currentTarget.innerHTML)
                         console.log("title edited");
                     }}> {note.title} </h2>
-                    <p contentEditable="true" onInput={(e) => {
+                    <p contentEditable="true" data-testid="updatedContent" onInput={(e) => {
                         handleEdit(note, "content", e.currentTarget.innerHTML)
                         console.log("content");
                     }}> {note.content} </p>

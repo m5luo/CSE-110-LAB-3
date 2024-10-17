@@ -80,19 +80,25 @@ describe("Display, Update, Delete Sticky Notes", () => {
         expect(deletedNote).not.toBeInTheDocument();
     });
 
-    // test("delete all", () => {
-    //     render(<StickyNotes />);
+    test("delete all", () => {
+        render(<StickyNotes />);
 
-    //     const listOfNotes = dummyNotesList;
+        const listOfNotes = dummyNotesList;
 
-    //     const deleteButtons = screen.getAllByTestId("delete-button")
+        const deleteButtons = screen.getAllByTestId("delete-button")
+
+        var deletedNotes: HTMLElement[] = [];
         
-    //     deleteButtons.forEach((button) => 
-    //         fireEvent.click(button)
-    //     )
+        listOfNotes.forEach((note) => 
+            deletedNotes = [...deletedNotes, screen.getByText(note.title)]
+        )
+        
+        deleteButtons.forEach((button) => 
+            fireEvent.click(button)
+        )
 
-    //     listOfNotes.forEach((note) => 
-    //         expect(screen.getByText(note.title)).not.toBeInTheDocument()
-    //     )
-    // });
+        deletedNotes.forEach((deletedNote) => 
+            expect(deletedNote).not.toBeInTheDocument()
+        )
+    });
 });
