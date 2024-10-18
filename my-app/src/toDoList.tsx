@@ -35,7 +35,9 @@ export function ToDoList() {
    <div className="App">
     <h1>{name}'s To Do List</h1>
      <div className="App-body">
-       Items bought: {numRemainingItems}
+      <p data-testid="counter">
+        Items bought: {numRemainingItems}
+      </p>
        <form action=".">
          {items.map((item) => ListItem(item, handleCheckboxClick))}
        </form>
