@@ -39,7 +39,7 @@ describe("Check Checkbox Increment and Decrement", () => {
 
         expect(counter).toHaveTextContent('Items bought: 1');
 
-        fireEvent.click(checkbox[0]);
+        fireEvent.click(checkbox[1]);
         
         expect(counter).toHaveTextContent('Items bought: 0');
     })
